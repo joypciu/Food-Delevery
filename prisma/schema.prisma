@@ -16,7 +16,7 @@ model Food {
   price Decimal
   imageUrl String?
   resturant Resturant? @relation(fields: [resturantId],references: [id])
-  resturantId Int @unique
+  resturantId Int 
 
 }
 

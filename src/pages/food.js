@@ -3,15 +3,15 @@ import {
   getFoods,
   getFoodById,
   createFood,
-  // updateFood,
-  // deleteFood,
+  updateFood,
+  deleteFood,
 } from '../controllers/food.js';
 const router = express.Router();
 
 router.get('/', getFoods);
 router.get('/:id', getFoodById);
 router.post('/', createFood);
-// router.patch('/:id', updateFood);
-// router.delete('/:id', deleteFood);
+router.patch('/:id', updateFood);
+router.delete('/:id', deleteFood);
 
 export default router;
