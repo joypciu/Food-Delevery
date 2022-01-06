@@ -15,8 +15,8 @@ model Food {
   name String
   price Decimal
   imageUrl String?
-  servingInResturants Resturant[]
-  order Order[]
+  resturant Resturant? @relation(fields: [resturantId],references: [id])
+  resturantId Int @unique
 
 }
 
@@ -33,8 +33,6 @@ model Order {
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  foodId Int @unique
-  Food Food @relation(fields: [foodId],references: [id])
   resturantID Int @unique
   resturant Resturant @relation(fields: [resturantID],references: [id])
 }
